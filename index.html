@@ -1030,11 +1030,10 @@ footer a {
   <p class="section-label">Live Demo · 실제 방송 청취</p>
   <h2 class="section-title">10개 프로그램, 20개 에피소드<br>지금 바로 들어보세요</h2>
   <p class="section-desc">
-    이 방송들은 모두 <strong>실제로 제작 완료된 MP3</strong>입니다.<br>
-    각 프로그램은 <em>왜 이 방송이 필요한가</em>라는 취지 아래 설계되었고,
-    에피소드 2개는 그 취지를 <em>서로 다른 상황과 인물</em>로 구체화한 실제 사례입니다.<br>
-    회원이 듣고, 지도사가 운영하고, 가족이 공유하고, 경영진이 파악하는 —
-    하나의 생태계가 이 20개 파일 안에 담겨 있습니다.
+    이 방송들은 <strong>개당 생성 단가 산정과 사업 구조 논의를 위한 시뮬레이션 샘플</strong>입니다.<br>
+    완성도보다 <em>어떤 콘텐츠가 왜 필요한가</em>를 확인하는 데 목적이 있습니다.<br>
+    각 프로그램의 취지와 에피소드 구성을 검토하고, 실제 시스템 연동 시
+    단가·품질·자동화 범위를 논의하기 위한 기초 자료입니다.
   </p>
 
   <style>
@@ -1600,6 +1599,400 @@ function toggleDemo(id) {
     </div>
   </div>
 </section>
+
+<!-- ══════════════════ 후원·광고 제안 ══════════════════ -->
+<div class="keyquote reveal" style="background: #12100e;">
+  <blockquote style="font-size: clamp(18px, 2.8vw, 28px);">
+    "한궁 F&B 라디오는 매일 시니어의 귀에 닿습니다.<br>
+    그 순간, <em>함께하는 브랜드</em>가 삶의 일부가 됩니다."
+  </blockquote>
+  <cite>한궁 F&B Studio · 광고·후원 파트너십 제안</cite>
+</div>
+
+<section class="reveal">
+  <p class="section-label">Partnership</p>
+  <h2 class="section-title">광고·후원사와 함께<br>만드는 생태계</h2>
+  <p class="section-desc">
+    한궁 F&B 라디오는 시니어가 <em>매일, 자발적으로</em> 듣는 방송입니다.
+    강요된 광고가 아니라 — 회원의 사연 속에, DJ 멘트 속에, 일상의 루틴 속에
+    자연스럽게 녹아드는 방식으로 파트너 브랜드를 전달합니다.
+    전국 한궁 회원과 그 가족을 직접 연결하는 이 채널은,
+    기존 시니어 광고 매체와 본질적으로 다릅니다.
+  </p>
+
+  <style>
+  .sponsor-why {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 64px;
+  }
+  .sponsor-why-card {
+    background: var(--paper);
+    padding: 40px 32px;
+  }
+  .sponsor-why-card .sw-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .sponsor-why-card h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  .sponsor-why-card p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.8;
+  }
+
+  .ad-format-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 64px;
+  }
+  .ad-format-card {
+    background: var(--paper);
+    padding: 40px 36px;
+    position: relative;
+  }
+  .ad-format-card .af-tag {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .ad-format-card h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.35;
+  }
+  .ad-format-card p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  .ad-example {
+    background: #ede8de;
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--ink);
+    font-style: italic;
+  }
+  .ad-example strong {
+    font-style: normal;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .sponsor-category {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--line);
+    margin-bottom: 64px;
+  }
+  .sponsor-category th {
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 14px 24px;
+    text-align: left;
+    font-weight: 400;
+  }
+  .sponsor-category td {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+    line-height: 1.7;
+    vertical-align: top;
+  }
+  .sponsor-category tr:last-child td { border-bottom: none; }
+  .sponsor-category tr:hover td { background: #ede8de; }
+  .sponsor-category td:first-child {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 600;
+    color: var(--gold);
+    width: 180px;
+    white-space: nowrap;
+  }
+  .sponsor-category td:last-child {
+    color: var(--gray);
+    font-size: 13px;
+  }
+
+  .sponsor-tier {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 40px;
+  }
+  .tier-card {
+    background: var(--paper);
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .tier-card.featured { background: var(--ink); color: var(--paper); }
+  .tier-name {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .tier-price {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  .tier-card.featured .tier-price { color: var(--gold); }
+  .tier-unit {
+    font-size: 12px;
+    color: var(--gray);
+    margin-bottom: 24px;
+  }
+  .tier-card.featured .tier-unit { color: rgba(245,240,232,0.5); }
+  .tier-features {
+    list-style: none;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tier-features li {
+    font-size: 13px;
+    line-height: 1.6;
+    padding-left: 18px;
+    position: relative;
+    color: var(--gray);
+  }
+  .tier-card.featured .tier-features li { color: rgba(245,240,232,0.7); }
+  .tier-features li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .cta-band {
+    background: var(--gold);
+    padding: 48px;
+    text-align: center;
+    margin-top: 0;
+  }
+  .cta-band h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .cta-band p {
+    font-size: 14px;
+    color: rgba(26,22,18,0.7);
+    margin-bottom: 24px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 14px 36px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.8; }
+
+  @media (max-width: 768px) {
+    .sponsor-why, .ad-format-grid, .sponsor-tier { grid-template-columns: 1fr; }
+  }
+  </style>
+
+  <!-- 왜 한궁 라디오인가 -->
+  <h3 style="font-family:'Noto Serif KR',serif;font-size:20px;font-weight:600;margin-bottom:24px;">왜 한궁 라디오인가</h3>
+  <div class="sponsor-why">
+    <div class="sponsor-why-card">
+      <div class="sw-num">①</div>
+      <h3>자발적 청취 채널</h3>
+      <p>회원이 스스로 신청하고 기다려서 듣는 방송입니다. 건너뛰거나 무시하는 광고가 아니라, 내 이야기가 담긴 방송 안에 자연스럽게 녹아든 브랜드 메시지입니다.</p>
+    </div>
+    <div class="sponsor-why-card">
+      <div class="sw-num">②</div>
+      <h3>검증된 타깃 도달</h3>
+      <p>한궁 회원은 60~80대 시니어이며, 동시에 그 가족(40~50대 자녀)까지 방송을 공유합니다. 시니어 본인과 구매 결정권자인 자녀를 동시에 접촉하는 채널입니다.</p>
+    </div>
+    <div class="sponsor-why-card">
+      <div class="sw-num">③</div>
+      <h3>지도사가 신뢰를 전달</h3>
+      <p>지도사는 회원이 매일 만나는 신뢰 관계입니다. 스폰서 멘트가 지도사의 목소리로 전달될 때, 그 브랜드는 지도사의 신뢰를 함께 입습니다.</p>
+    </div>
+  </div>
+
+  <!-- 광고 형태 4가지 -->
+  <h3 style="font-family:'Noto Serif KR',serif;font-size:20px;font-weight:600;margin-bottom:24px;">4가지 광고·후원 형태</h3>
+  <div class="ad-format-grid">
+
+    <div class="ad-format-card">
+      <div class="af-tag">Format 01 · 방송 내 음성</div>
+      <h3>스폰서 오프닝 멘트</h3>
+      <p>방송 시작 전 5~10초. DJ가 자연스럽게 스폰서를 소개합니다. 회원이 방송을 기다리는 순간, 가장 집중도가 높은 지점입니다.</p>
+      <div class="ad-example">
+        "오늘 한궁 칭찬 라디오는 <strong>○○ 건강식품</strong>과 함께합니다.<br>
+        어르신들의 건강한 하루를 ○○이 응원합니다."
+      </div>
+    </div>
+
+    <div class="ad-format-card">
+      <div class="af-tag">Format 02 · 방송 내 음성</div>
+      <h3>중간 CM송</h3>
+      <p>S3(노래소개)와 S4(노래재생) 사이 자연스러운 전환 지점에 15~30초 CM송이 삽입됩니다. 사연 기반 노래(story_song)와 완전히 분리된 별도 파일로 관리됩니다.</p>
+      <div class="ad-example">
+        [사연 소개 후 → CM송 재생]<br>
+        "<strong>○○ 요양보험</strong> — 가족이 안심하는 선택,<br>
+        지금 지도사 선생님께 물어보세요."
+      </div>
+    </div>
+
+    <div class="ad-format-card">
+      <div class="af-tag">Format 03 · 방송 내 음성</div>
+      <h3>클로징 협찬 안내</h3>
+      <p>S5(클로징) 마지막에 자연스럽게 삽입됩니다. "오늘 방송을 후원해 주신 ○○에 감사드립니다"는 형식으로, 청취 경험을 해치지 않으면서 브랜드를 각인시킵니다.</p>
+      <div class="ad-example">
+        "오늘 방송을 후원해 주신 <strong>○○ 보청기</strong>에 감사드립니다.<br>
+        더 잘 들리는 하루, ○○과 함께하세요."
+      </div>
+    </div>
+
+    <div class="ad-format-card">
+      <div class="af-tag">Format 04 · 프로그램 단위</div>
+      <h3>프로그램 단독 후원</h3>
+      <p>특정 프로그램 전체를 단독 후원합니다. 예: "○○ 건강보험의 부모님 안부 라디오" — 프로그램 이름 자체에 브랜드가 들어가 매 에피소드마다 노출됩니다.</p>
+      <div class="ad-example">
+        "<strong>○○생명 보험</strong>이 함께하는<br>
+        부모님 안부 라디오 — 가족의 마음을 전합니다."
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 업종별 적합도 -->
+  <h3 style="font-family:'Noto Serif KR',serif;font-size:20px;font-weight:600;margin-bottom:24px;">업종별 파트너십 적합도</h3>
+  <table class="sponsor-category">
+    <thead>
+      <tr>
+        <th>업종</th>
+        <th>연결 방식</th>
+        <th>적합 프로그램</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>건강기능식품<br>(홍삼·영양제)</td>
+        <td>스폰서 멘트 + 클로징 협찬. "오늘 한궁 후 ○○ 한 포"처럼 생활 루틴과 자연 연결</td>
+        <td>P04 루틴 라디오, P01 칭찬 라디오</td>
+      </tr>
+      <tr>
+        <td>시니어 보험·금융</td>
+        <td>프로그램 단독 후원. 신뢰가 중요한 업종일수록 지도사 목소리를 통한 전달이 효과적</td>
+        <td>P03 부모님 안부 라디오, P09 총재 메시지</td>
+      </tr>
+      <tr>
+        <td>의료기기·헬스케어<br>(보청기·안마기 등)</td>
+        <td>CM송 + 지도사 CRM 연동. 지도사가 회원에게 직접 소개하는 구조로 확장 가능</td>
+        <td>P07 CRM 라디오, P02 기억활력 라디오</td>
+      </tr>
+      <tr>
+        <td>식품·도시락 배달</td>
+        <td>루틴 라디오 스폰서. "오늘 점심도 ○○과 함께"처럼 일상 접점 극대화</td>
+        <td>P04 루틴 라디오, P05 7일 체험</td>
+      </tr>
+      <tr>
+        <td>여행·문화 프로그램</td>
+        <td>기억활력·총재 메시지 프로그램 협찬. "인생의 저녁길을 더 풍요롭게"라는 정서 연결</td>
+        <td>P02 기억활력, P09 총재 메시지</td>
+      </tr>
+      <tr>
+        <td>복지용구·보조기기</td>
+        <td>B2G 연계 후원. 경로당·복지관 확장 시 기관 단위 협찬으로 전환 가능</td>
+        <td>P07 CRM, 지역 한궁 방송국</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 후원 등급 -->
+  <h3 style="font-family:'Noto Serif KR',serif;font-size:20px;font-weight:600;margin-bottom:24px;">후원 파트너십 등급</h3>
+  <div class="sponsor-tier">
+    <div class="tier-card">
+      <div class="tier-name">Associate</div>
+      <div class="tier-price">에피소드</div>
+      <div class="tier-unit">단건 스폰서십</div>
+      <ul class="tier-features">
+        <li>스폰서 오프닝 멘트 (1편)</li>
+        <li>클로징 협찬 안내 (1편)</li>
+        <li>브리핑 페이지 로고 노출</li>
+        <li>성과 리포트 제공</li>
+      </ul>
+    </div>
+    <div class="tier-card featured">
+      <div class="tier-name">Program Partner</div>
+      <div class="tier-price">프로그램</div>
+      <div class="tier-unit">월간 단독 후원</div>
+      <ul class="tier-features">
+        <li>프로그램명 브랜드 삽입</li>
+        <li>전 에피소드 스폰서 멘트</li>
+        <li>CM송 제작 지원</li>
+        <li>지도사 CRM 연동 소개</li>
+        <li>월간 청취 리포트</li>
+        <li>브리핑 페이지 Featured 노출</li>
+      </ul>
+    </div>
+    <div class="tier-card">
+      <div class="tier-name">Ecosystem Partner</div>
+      <div class="tier-price">생태계</div>
+      <div class="tier-unit">전략적 파트너십</div>
+      <ul class="tier-features">
+        <li>전 프로그램 후원권</li>
+        <li>지도사 교육 콘텐츠 협찬</li>
+        <li>B2B·B2G 공동 진출</li>
+        <li>제품·서비스 CRM 연동</li>
+        <li>전국 지회 단위 확산</li>
+        <li>공동 브랜드 캠페인</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <h3>파트너십 제안서를 요청하세요</h3>
+    <p>업종과 예산 규모에 맞는 맞춤형 제안서를 별도로 준비해 드립니다.</p>
+    <a href="mailto:doanhwang@gmail.com" class="cta-btn">제안서 요청하기</a>
+  </div>
+
+</section>
+
+<div class="divider"></div>
 
 <!-- ══════════════════ 푸터 ══════════════════ -->
 <footer>
