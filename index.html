@@ -648,6 +648,8 @@ footer a { color: var(--gold); text-decoration: none; }
 
 <div class="divider"></div>
 
+
+<div class="divider"></div>
 <!-- ══════ 시스템 ══════ -->
 <section class="reveal">
   <p class="section-label">The System · 만든 것</p>
@@ -689,6 +691,226 @@ footer a { color: var(--gold); text-decoration: none; }
 
 <div class="divider"></div>
 
+
+<div class="divider"></div>
+<!-- ══════ 시스템 구현 화면 ══════ -->
+<section class="reveal">
+  <p class="section-label">System Screens · 구현 화면</p>
+  <h2 class="section-title">생태계 전체가<br>이미 설계되어 있습니다</h2>
+  <p class="section-desc">
+    회원 경험부터 지도사 운영, 슈퍼바이저 관제, 운영국, 방송 엔진까지 —<br>
+    한궁 라디오 방송국의 5단계 생태계 구조가 화면으로 구현되어 있습니다.<br>
+    오늘 논의하신 방향을 바탕으로, 파일럿 운영에 필요한 화면 구조와 방송 운영 흐름은 이미 준비되어 있습니다.
+  </p>
+
+  <style>
+  .screen-tabs {
+    display: flex; gap: 0;
+    border: 1px solid var(--line); margin-bottom: 0;
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .screen-tabs::-webkit-scrollbar { display: none; }
+  .screen-tab {
+    padding: 13px 18px; font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gray); background: var(--paper);
+    border: none; border-right: 1px solid var(--line);
+    cursor: pointer; white-space: nowrap;
+    transition: all 0.2s; font-family: 'Noto Sans KR', sans-serif;
+    flex-shrink: 0;
+  }
+  .screen-tab:last-child { border-right: none; }
+  .screen-tab:hover { background: #ede8de; color: var(--ink); }
+  .screen-tab.active { background: var(--ink); color: var(--paper); }
+  .screen-panel { display: none; }
+  .screen-panel.active { display: block; }
+  .screen-img-wrap {
+    border: 1px solid var(--line); border-top: none;
+    overflow: hidden; background: #f0ebe0; cursor: zoom-in;
+  }
+  .screen-img-wrap img { width: 100%; display: block; transition: transform 0.4s; }
+  .screen-img-wrap:hover img { transform: scale(1.015); }
+  .screen-caption {
+    padding: 24px 36px; border: 1px solid var(--line); border-top: none;
+    background: var(--paper);
+    display: grid; grid-template-columns: 56px 1fr; gap: 24px; align-items: start;
+  }
+  .screen-cap-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px; color: var(--gold-light); line-height: 1;
+  }
+  .screen-cap-body h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 17px; font-weight: 600; margin-bottom: 6px;
+  }
+  .screen-cap-body p { font-size: 13px; color: var(--gray); line-height: 1.8; }
+  .screen-cap-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .screen-cap-tag {
+    font-size: 10px; letter-spacing: 0.12em;
+    color: var(--mid); background: rgba(200,164,90,0.09);
+    border-left: 2px solid var(--gold); padding: 2px 8px; line-height: 1.9;
+  }
+  @media (max-width: 768px) {
+    .screen-tab { padding: 10px 12px; font-size: 10px; }
+    .screen-caption { grid-template-columns: 1fr; }
+  }
+  </style>
+
+  <div class="screen-tabs">
+    <button class="screen-tab active" onclick="showScreen(0)">전체 구조</button>
+    <button class="screen-tab" onclick="showScreen(1)">전체 화면 맵</button>
+    <button class="screen-tab" onclick="showScreen(2)">회원 경험 1</button>
+    <button class="screen-tab" onclick="showScreen(3)">회원 경험 2</button>
+    <button class="screen-tab" onclick="showScreen(4)">지도사 운영</button>
+    <button class="screen-tab" onclick="showScreen(5)">슈퍼바이저</button>
+    <button class="screen-tab" onclick="showScreen(6)">Program Studio</button>
+    <button class="screen-tab" onclick="showScreen(7)">Life Radio OS</button>
+  </div>
+
+  <div>
+    <div class="screen-panel active">
+      <div class="screen-img-wrap"><img src="system_screens/ecosystem.png" alt="생태계 전체 구조"></div>
+      <div class="screen-caption">
+        <div class="screen-cap-num">01</div>
+        <div class="screen-cap-body">
+          <h3>Hangung Radio Ecosystem — 전체 구조</h3>
+          <p>회원 경험 → 지도사 운영 → 슈퍼바이저 관제 → Program Studio 운영국 → Life Radio OS 방송 엔진. 5단계 생태계가 하나의 흐름으로 연결됩니다. 사연에서 시작해 가족 연결로 끝나는 7단계 사용자 여정이 구현되어 있습니다.</p>
+          <div class="screen-cap-tags">
+            <span class="screen-cap-tag">5단계 생태계</span>
+            <span class="screen-cap-tag">7단계 사용자 여정</span>
+            <span class="screen-cap-tag">선순환 구조</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen-panel">
+      <div class="screen-img-wrap"><img src="system_screens/fullmap.png" alt="전체 화면 맵"></div>
+      <div class="screen-caption">
+        <div class="screen-cap-num">02</div>
+        <div class="screen-cap-body">
+          <h3>한궁 라디오 서비스 — 발표용 전체 화면 맵</h3>
+          <p>회원(A) · 지도사/슈퍼바이저(B) · Program Studio 운영국(C) · Life Radio OS 엔진(D). 사연→방송생성→품질검증→delivery→공유→관계확장의 전체 흐름을 한눈에 확인할 수 있습니다.</p>
+          <div class="screen-cap-tags">
+            <span class="screen-cap-tag">회원 경험</span>
+            <span class="screen-cap-tag">지도사 운영</span>
+            <span class="screen-cap-tag">운영국 검증</span>
+            <span class="screen-cap-tag">방송 생성 엔진</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen-panel">
+      <div class="screen-img-wrap"><img src="system_screens/member1.png" alt="회원 경험 1"></div>
+      <div class="screen-caption">
+        <div class="screen-cap-num">03</div>
+        <div class="screen-cap-body">
+          <h3>Hangung F&B Studio — 회원 경험 1</h3>
+          <p>회원이 한궁 라디오 서비스에 진입하고 사연을 신청하는 핵심 화면. 랜딩 → 회원 홈 → 사연 신청 → 음악 선호 설정으로 이어집니다. "한궁 한 판이 오늘의 라디오 한 상이 됩니다."</p>
+          <div class="screen-cap-tags">
+            <span class="screen-cap-tag">사연 신청</span>
+            <span class="screen-cap-tag">음악 선호 설정</span>
+            <span class="screen-cap-tag">인지 자극</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen-panel">
+      <div class="screen-img-wrap"><img src="system_screens/member2.png" alt="회원 경험 2"></div>
+      <div class="screen-caption">
+        <div class="screen-cap-num">04</div>
+        <div class="screen-cap-body">
+          <h3>Hangung F&B Studio — 회원 경험 2</h3>
+          <p>신청 이력 확인 · 방송 청취(5세그먼트) · 서비스 허브 · 동의 구조. 회원이 자신의 방송을 듣고 가족에게 공유하는 전 과정이 앱 안에서 완결됩니다.</p>
+          <div class="screen-cap-tags">
+            <span class="screen-cap-tag">방송 청취</span>
+            <span class="screen-cap-tag">가족 공유</span>
+            <span class="screen-cap-tag">치매예방·논문·특허 연계</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen-panel">
+      <div class="screen-img-wrap"><img src="system_screens/instructor.png" alt="지도사 운영"></div>
+      <div class="screen-caption">
+        <div class="screen-cap-num">05</div>
+        <div class="screen-cap-body">
+          <h3>Hangung F&B Studio — 지도사 운영</h3>
+          <p>지도사가 회원을 큐레이션하고 방송을 생성하며 CRM을 운영하는 화면. 사연 접수함 · 방송 생성 상세 · CRM 회원 관리(신규/활동/가족공유/재청취/휴면).</p>
+          <div class="screen-cap-tags">
+            <span class="screen-cap-tag">사연 큐레이션</span>
+            <span class="screen-cap-tag">방송 생성</span>
+            <span class="screen-cap-tag">CRM 관리</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen-panel">
+      <div class="screen-img-wrap"><img src="system_screens/supervisor.png" alt="슈퍼바이저 관제"></div>
+      <div class="screen-caption">
+        <div class="screen-cap-num">06</div>
+        <div class="screen-cap-body">
+          <h3>Hangung F&B Studio — 슈퍼바이저 / 관제 / 수익</h3>
+          <p>슈퍼바이저가 지도사 성과와 품질, 메뉴별 성과, 정산과 수익 구조를 관제하는 화면. 실시간 관제 · 품질 관리 · 수익 극대화 3축으로 운영됩니다.</p>
+          <div class="screen-cap-tags">
+            <span class="screen-cap-tag">지도사 성과 관리</span>
+            <span class="screen-cap-tag">품질 점검</span>
+            <span class="screen-cap-tag">수익 정산</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen-panel">
+      <div class="screen-img-wrap"><img src="system_screens/programstudio.png" alt="Program Studio"></div>
+      <div class="screen-caption">
+        <div class="screen-cap-num">07</div>
+        <div class="screen-cap-body">
+          <h3>Life Radio Program Studio — 운영 / 편성 / 검증</h3>
+          <p>본부와 운영자가 사연을 받아 편성하고 create-v3 워크플로우를 실행하며 품질을 검증하는 운영국 화면. 대시보드 · 사연 접수 · 워크플로우 · 프로그램 빌더 · 안전 신호 센터 · E2E 검증.</p>
+          <div class="screen-cap-tags">
+            <span class="screen-cap-tag">품질 검증</span>
+            <span class="screen-cap-tag">E2E 검증</span>
+            <span class="screen-cap-tag">워크플로우 자동화</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen-panel">
+      <div class="screen-img-wrap"><img src="system_screens/liferadioos.png" alt="Life Radio OS"></div>
+      <div class="screen-caption">
+        <div class="screen-cap-num">08</div>
+        <div class="screen-cap-body">
+          <h3>Life Radio OS — 방송 엔진 / 관리자 / 공유</h3>
+          <p>방송 생성 엔진, 개인 방송, 기억활력 운영센터, 논문근거 워크벤치, 관계 확장 뷰를 아우르는 핵심 플랫폼. 1,700편 중 210편 — 논문 근거가 워크벤치 안에서 방송과 직접 연결됩니다.</p>
+          <div class="screen-cap-tags">
+            <span class="screen-cap-tag">방송 생성 엔진</span>
+            <span class="screen-cap-tag">논문근거 워크벤치</span>
+            <span class="screen-cap-tag">기억활력 운영센터</span>
+            <span class="screen-cap-tag">관계 확장 뷰</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  function showScreen(idx) {
+    document.querySelectorAll('.screen-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+    document.querySelectorAll('.screen-panel').forEach((p,i) => p.classList.toggle('active', i===idx));
+  }
+  </script>
+
+</section>
+
+
+
+<div class="divider"></div>
 <!-- ══════ 생태계 전체 구조 ══════ -->
 <section class="reveal">
   <p class="section-label">Ecosystem · 전체 구조</p>
@@ -852,6 +1074,8 @@ footer a { color: var(--gold); text-decoration: none; }
 
 <div class="divider"></div>
 
+
+<div class="divider"></div>
 <!-- ══════ 10개 프로그램 ══════ -->
 <section class="reveal">
   <p class="section-label">10 Programs · 방송 체계</p>
@@ -927,6 +1151,8 @@ footer a { color: var(--gold); text-decoration: none; }
 
 <div class="divider"></div>
 
+
+<div class="divider"></div>
 <!-- ══════ 지도사 ══════ -->
 <section class="reveal">
   <p class="section-label">The Pioneer · 지도사의 새 역할</p>
@@ -953,6 +1179,8 @@ footer a { color: var(--gold); text-decoration: none; }
 
 <div class="divider"></div>
 
+
+<div class="divider"></div>
 <!-- ══════ 선순환 ══════ -->
 <section class="reveal">
   <p class="section-label">The Cycle · 선순환 구조</p>
@@ -998,6 +1226,8 @@ footer a { color: var(--gold); text-decoration: none; }
 
 <div class="divider"></div>
 
+
+<div class="divider"></div>
 <!-- ══════ 안전 ══════ -->
 <section class="reveal">
   <p class="section-label">Safety & Compliance · 운영 원칙</p>
@@ -1036,6 +1266,8 @@ footer a { color: var(--gold); text-decoration: none; }
 
 <div class="divider"></div>
 
+
+<div class="divider"></div>
 <!-- ══════ 핵심 문장 ══════ -->
 <div class="keyquote reveal">
   <blockquote>
@@ -1396,6 +1628,8 @@ footer a { color: var(--gold); text-decoration: none; }
 
 <div class="divider"></div>
 
+
+<div class="divider"></div>
 <!-- ══════ 광고·후원 ══════ -->
 <section class="reveal">
   <p class="section-label">Ad & Sponsorship · 지속가능한 구조</p>
@@ -1444,6 +1678,8 @@ footer a { color: var(--gold); text-decoration: none; }
 
 <div class="divider"></div>
 
+
+<div class="divider"></div>
 <!-- ══════ 방향 확정 요청 ══════ -->
 <section class="reveal">
   <p class="section-label">Direction · 총재님께 여쭙습니다</p>
@@ -1488,222 +1724,6 @@ footer a { color: var(--gold); text-decoration: none; }
 <div class="divider"></div>
 
 <div class="divider"></div>
-
-<!-- ══════ 시스템 구현 화면 ══════ -->
-<section class="reveal">
-  <p class="section-label">System Screens · 구현 화면</p>
-  <h2 class="section-title">생태계 전체가<br>이미 설계되어 있습니다</h2>
-  <p class="section-desc">
-    회원 경험부터 지도사 운영, 슈퍼바이저 관제, 운영국, 방송 엔진까지 —<br>
-    한궁 라디오 방송국의 5단계 생태계 구조가 화면으로 구현되어 있습니다.<br>
-    오늘 논의하신 방향대로 바로 실천에 옮길 수 있는 상태입니다.
-  </p>
-
-  <style>
-  .screen-tabs {
-    display: flex; gap: 0;
-    border: 1px solid var(--line); margin-bottom: 0;
-    overflow-x: auto; scrollbar-width: none;
-  }
-  .screen-tabs::-webkit-scrollbar { display: none; }
-  .screen-tab {
-    padding: 13px 18px; font-size: 11px;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--gray); background: var(--paper);
-    border: none; border-right: 1px solid var(--line);
-    cursor: pointer; white-space: nowrap;
-    transition: all 0.2s; font-family: 'Noto Sans KR', sans-serif;
-    flex-shrink: 0;
-  }
-  .screen-tab:last-child { border-right: none; }
-  .screen-tab:hover { background: #ede8de; color: var(--ink); }
-  .screen-tab.active { background: var(--ink); color: var(--paper); }
-  .screen-panel { display: none; }
-  .screen-panel.active { display: block; }
-  .screen-img-wrap {
-    border: 1px solid var(--line); border-top: none;
-    overflow: hidden; background: #f0ebe0; cursor: zoom-in;
-  }
-  .screen-img-wrap img { width: 100%; display: block; transition: transform 0.4s; }
-  .screen-img-wrap:hover img { transform: scale(1.015); }
-  .screen-caption {
-    padding: 24px 36px; border: 1px solid var(--line); border-top: none;
-    background: var(--paper);
-    display: grid; grid-template-columns: 56px 1fr; gap: 24px; align-items: start;
-  }
-  .screen-cap-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 40px; color: var(--gold-light); line-height: 1;
-  }
-  .screen-cap-body h3 {
-    font-family: 'Noto Serif KR', serif;
-    font-size: 17px; font-weight: 600; margin-bottom: 6px;
-  }
-  .screen-cap-body p { font-size: 13px; color: var(--gray); line-height: 1.8; }
-  .screen-cap-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-  .screen-cap-tag {
-    font-size: 10px; letter-spacing: 0.12em;
-    color: var(--mid); background: rgba(200,164,90,0.09);
-    border-left: 2px solid var(--gold); padding: 2px 8px; line-height: 1.9;
-  }
-  @media (max-width: 768px) {
-    .screen-tab { padding: 10px 12px; font-size: 10px; }
-    .screen-caption { grid-template-columns: 1fr; }
-  }
-  </style>
-
-  <div class="screen-tabs">
-    <button class="screen-tab active" onclick="showScreen(0)">전체 구조</button>
-    <button class="screen-tab" onclick="showScreen(1)">전체 화면 맵</button>
-    <button class="screen-tab" onclick="showScreen(2)">회원 경험 1</button>
-    <button class="screen-tab" onclick="showScreen(3)">회원 경험 2</button>
-    <button class="screen-tab" onclick="showScreen(4)">지도사 운영</button>
-    <button class="screen-tab" onclick="showScreen(5)">슈퍼바이저</button>
-    <button class="screen-tab" onclick="showScreen(6)">Program Studio</button>
-    <button class="screen-tab" onclick="showScreen(7)">Life Radio OS</button>
-  </div>
-
-  <div>
-    <div class="screen-panel active">
-      <div class="screen-img-wrap"><img src="system_screens/ecosystem.png" alt="생태계 전체 구조"></div>
-      <div class="screen-caption">
-        <div class="screen-cap-num">01</div>
-        <div class="screen-cap-body">
-          <h3>Hangung Radio Ecosystem — 전체 구조</h3>
-          <p>회원 경험 → 지도사 운영 → 슈퍼바이저 관제 → Program Studio 운영국 → Life Radio OS 방송 엔진. 5단계 생태계가 하나의 흐름으로 연결됩니다. 사연에서 시작해 가족 연결로 끝나는 7단계 사용자 여정이 구현되어 있습니다.</p>
-          <div class="screen-cap-tags">
-            <span class="screen-cap-tag">5단계 생태계</span>
-            <span class="screen-cap-tag">7단계 사용자 여정</span>
-            <span class="screen-cap-tag">선순환 구조</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="screen-panel">
-      <div class="screen-img-wrap"><img src="system_screens/fullmap.png" alt="전체 화면 맵"></div>
-      <div class="screen-caption">
-        <div class="screen-cap-num">02</div>
-        <div class="screen-cap-body">
-          <h3>한궁 라디오 서비스 — 발표용 전체 화면 맵</h3>
-          <p>회원(A) · 지도사/슈퍼바이저(B) · Program Studio 운영국(C) · Life Radio OS 엔진(D). 사연→방송생성→품질검증→delivery→공유→관계확장의 전체 흐름을 한눈에 확인할 수 있습니다.</p>
-          <div class="screen-cap-tags">
-            <span class="screen-cap-tag">회원 경험</span>
-            <span class="screen-cap-tag">지도사 운영</span>
-            <span class="screen-cap-tag">운영국 검증</span>
-            <span class="screen-cap-tag">방송 생성 엔진</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="screen-panel">
-      <div class="screen-img-wrap"><img src="system_screens/member1.png" alt="회원 경험 1"></div>
-      <div class="screen-caption">
-        <div class="screen-cap-num">03</div>
-        <div class="screen-cap-body">
-          <h3>Hangung F&B Studio — 회원 경험 1</h3>
-          <p>회원이 한궁 라디오 서비스에 진입하고 사연을 신청하는 핵심 화면. 랜딩 → 회원 홈 → 사연 신청 → 음악 선호 설정으로 이어집니다. "한궁 한 판이 오늘의 라디오 한 상이 됩니다."</p>
-          <div class="screen-cap-tags">
-            <span class="screen-cap-tag">사연 신청</span>
-            <span class="screen-cap-tag">음악 선호 설정</span>
-            <span class="screen-cap-tag">인지 자극</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="screen-panel">
-      <div class="screen-img-wrap"><img src="system_screens/member2.png" alt="회원 경험 2"></div>
-      <div class="screen-caption">
-        <div class="screen-cap-num">04</div>
-        <div class="screen-cap-body">
-          <h3>Hangung F&B Studio — 회원 경험 2</h3>
-          <p>신청 이력 확인 · 방송 청취(5세그먼트) · 서비스 허브 · 동의 구조. 회원이 자신의 방송을 듣고 가족에게 공유하는 전 과정이 앱 안에서 완결됩니다.</p>
-          <div class="screen-cap-tags">
-            <span class="screen-cap-tag">방송 청취</span>
-            <span class="screen-cap-tag">가족 공유</span>
-            <span class="screen-cap-tag">치매예방·논문·특허 연계</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="screen-panel">
-      <div class="screen-img-wrap"><img src="system_screens/instructor.png" alt="지도사 운영"></div>
-      <div class="screen-caption">
-        <div class="screen-cap-num">05</div>
-        <div class="screen-cap-body">
-          <h3>Hangung F&B Studio — 지도사 운영</h3>
-          <p>지도사가 회원을 큐레이션하고 방송을 생성하며 CRM을 운영하는 화면. 사연 접수함 · 방송 생성 상세 · CRM 회원 관리(신규/활동/가족공유/재청취/휴면).</p>
-          <div class="screen-cap-tags">
-            <span class="screen-cap-tag">사연 큐레이션</span>
-            <span class="screen-cap-tag">방송 생성</span>
-            <span class="screen-cap-tag">CRM 관리</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="screen-panel">
-      <div class="screen-img-wrap"><img src="system_screens/supervisor.png" alt="슈퍼바이저 관제"></div>
-      <div class="screen-caption">
-        <div class="screen-cap-num">06</div>
-        <div class="screen-cap-body">
-          <h3>Hangung F&B Studio — 슈퍼바이저 / 관제 / 수익</h3>
-          <p>슈퍼바이저가 지도사 성과와 품질, 메뉴별 성과, 정산과 수익 구조를 관제하는 화면. 실시간 관제 · 품질 관리 · 수익 극대화 3축으로 운영됩니다.</p>
-          <div class="screen-cap-tags">
-            <span class="screen-cap-tag">지도사 성과 관리</span>
-            <span class="screen-cap-tag">품질 점검</span>
-            <span class="screen-cap-tag">수익 정산</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="screen-panel">
-      <div class="screen-img-wrap"><img src="system_screens/programstudio.png" alt="Program Studio"></div>
-      <div class="screen-caption">
-        <div class="screen-cap-num">07</div>
-        <div class="screen-cap-body">
-          <h3>Life Radio Program Studio — 운영 / 편성 / 검증</h3>
-          <p>본부와 운영자가 사연을 받아 편성하고 create-v3 워크플로우를 실행하며 품질을 검증하는 운영국 화면. 대시보드 · 사연 접수 · 워크플로우 · 프로그램 빌더 · 안전 신호 센터 · E2E 검증.</p>
-          <div class="screen-cap-tags">
-            <span class="screen-cap-tag">품질 검증</span>
-            <span class="screen-cap-tag">E2E 검증</span>
-            <span class="screen-cap-tag">워크플로우 자동화</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="screen-panel">
-      <div class="screen-img-wrap"><img src="system_screens/liferadioos.png" alt="Life Radio OS"></div>
-      <div class="screen-caption">
-        <div class="screen-cap-num">08</div>
-        <div class="screen-cap-body">
-          <h3>Life Radio OS — 방송 엔진 / 관리자 / 공유</h3>
-          <p>방송 생성 엔진, 개인 방송, 기억활력 운영센터, 논문근거 워크벤치, 관계 확장 뷰를 아우르는 핵심 플랫폼. 1,700편 중 210편 — 논문 근거가 워크벤치 안에서 방송과 직접 연결됩니다.</p>
-          <div class="screen-cap-tags">
-            <span class="screen-cap-tag">방송 생성 엔진</span>
-            <span class="screen-cap-tag">논문근거 워크벤치</span>
-            <span class="screen-cap-tag">기억활력 운영센터</span>
-            <span class="screen-cap-tag">관계 확장 뷰</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-  function showScreen(idx) {
-    document.querySelectorAll('.screen-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
-    document.querySelectorAll('.screen-panel').forEach((p,i) => p.classList.toggle('active', i===idx));
-  }
-  </script>
-
-</section>
-
 
 <footer>
   <p style="font-family:'Noto Serif KR',serif;font-size:18px;color:var(--ink);margin-bottom:16px;">한궁 F&B Studio</p>
